@@ -1,7 +1,7 @@
 import pytest
 from customers.serializers import CustomerSerializer
 
-
+@pytest.mark.django_db
 def test_customer_serializer():
     data = {'name': 'Test Customer', 'age': 30, 'gender': 'Male'}
     serializer = CustomerSerializer(data=data)
