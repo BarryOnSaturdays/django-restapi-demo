@@ -3,10 +3,12 @@ from customers.serializers import ServiceInteractionSerializer
 from customers.models import ServiceInteraction, Customer
 from datetime import datetime
 
+# Fixture to create a test customer object for the tests
 @pytest.fixture
 def test_customer(db): # db fixture is provided by pytest-django
     return Customer.objects.create(name="Test Customer", age=30, gender="Male")
 
+# Test ServiceInteractionSerializer correctly validates and saves valid data
 def test_service_interaction_serializer_valid(test_customer):
     data = {
         'customer': test_customer.pk,  # Use the primary key
@@ -21,6 +23,7 @@ def test_service_interaction_serializer_valid(test_customer):
     assert interaction.text == 'Test interaction text.'
     assert interaction.sentiment == 'positive'
 
+# Test ServiceInteractionSerializer handles missing required fields
 def test_service_interaction_serializer_invalid(test_customer):
     # Missing required field 'text'
     data = {
@@ -33,6 +36,7 @@ def test_service_interaction_serializer_invalid(test_customer):
     assert 'text' in serializer.errors
 
 
+# Test ServiceInteractionSerializer handles non-existent customer references
 def test_service_interaction_serializer_invalid_customer(db):
     data = {
         'customer': 999,  # Non-existent customer pk
