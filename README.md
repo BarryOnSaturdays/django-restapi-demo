@@ -17,6 +17,14 @@ Also apply Unit test, Intergration test, authentication, authorization to the ap
     - makemigrations and migrate
 - Insert mock data into SQLite
 
+## Testing
+### Unit test
+- test serializer function
+- write failed test cases to test out (missing field, wrong datatype, etc)
+### Intergration test
+- Views: Test the complete request-response cycle, including URL routing, view logic, serializer usage, and database interaction.
+- API endpoints: authentication, permissions, and data handling.
+
 ## Swagger UI Build up
 - Update Settings.py 
     - Add `drf_spectacular` to INSTALLED_APPS
@@ -25,10 +33,4 @@ Also apply Unit test, Intergration test, authentication, authorization to the ap
 - Update URLs.py
     - both project level and app level
 
-## Testing
-### Unit test
-- test serializer function
-- write failed test cases to test out (missing field, wrong datatype, etc)
-### Intergration test
-- Views: Test the complete request-response cycle, including URL routing, view logic, serializer usage, and database interaction.
-- API endpoints: authentication, permissions, and data handling.
+![alt text](image.png)
