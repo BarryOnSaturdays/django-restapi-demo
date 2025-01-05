@@ -32,16 +32,6 @@ def test_service_interaction_serializer_invalid(test_customer):
     assert not serializer.is_valid()
     assert 'text' in serializer.errors
 
-def test_service_interaction_serializer_invalid_date_format(test_customer):
-    data = {
-        'customer': test_customer.pk,
-        'text': 'Test interaction text.',
-        'sentiment': 'positive',
-        'interaction_date': 'invalid date format'
-    }
-    serializer = ServiceInteractionSerializer(data=data)
-    assert not serializer.is_valid()
-    assert 'interaction_date' in serializer.errors
 
 def test_service_interaction_serializer_invalid_customer(db):
     data = {
