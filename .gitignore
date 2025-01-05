@@ -3,3 +3,43 @@ customer_service_api/customer_service_api/settings.py
 Pipfile
 Pipfile.lock
 **/__pycache__/
+
+# Byte-compiled / optimized / bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environments
+.venv/
+venv/
+env/
+ENV/
+.virtualenv/
+virtualenv/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Django stuff:
+*.log
+*.pot
+local_settings.py
+db.sqlite3  # Or your database file (e.g., db.postgresql)
+media/* # If you don't want to track uploaded media files. Remove if you use cloud storage
+static/* # If you don't want to track static files. Remove if you use cloud storage and collectstatic
+*.swp # Swap files from vim
+.DS_Store # macOS folder metadata
+*.DS_Store
+.AppleDouble
+__MACOSX
+
+# IDEs and editors
+.vscode/
+
+# Secret files
+.env
+*.key
+*.pem
+*.pfx
